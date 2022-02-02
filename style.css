@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color:  #eef9bf;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    text-align: center;
+    color:#75B79E;
+    margin: 10px;
+}
+section{
+    width: 79%;
+    margin: 50px auto;
+    background-color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.front_card{
+    width:117px;
+    height: 146px;
+    background-color:#A7E9AF; 
+    margin: 20px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    margin-left:10px;
+    margin-top:10px;
+}
