@@ -42,12 +42,28 @@ function changeCards(messege){
     plus = plus + 1;
     messege_list.push(list[messege]);
 
-    setTimeout(checkCards, 2000);
+    console.log(plus)
+    console.log(sentence_list)
 
+    if(plus > 2){
+        let photo = 'front';
+        for(let i =0; i < sentence_list.length; i++){
+            sentence_list[i].innerHTML = `
+            <img src="arquivos/${photo}.png" id=${messege_list[i]}>
+            `
+        }
+        sentence_list = [];
+        messege_list = [];
+        plus = 0;
+
+        alert("Escolha duas cartas por vez!!!!")
+    }
+
+    setTimeout(checkCards, 2000);
 }
 
 function checkCards(){
-    if(plus === 2){
+    if(plus == 2){
         if(messege_list[0] !== messege_list[1]){
             let photo = 'front';
             sentence_list[0].innerHTML = `
@@ -56,7 +72,7 @@ function checkCards(){
             sentence_list[1].innerHTML = `
             <img src="arquivos/${photo}.png" id=${messege_list[1]}>
         `
-        }  
+        }
         sentence_list = [];
         messege_list = [];
         plus = 0;
