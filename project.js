@@ -1,15 +1,27 @@
 
-let number = parseInt(prompt("Com quantas cartas você quer jogar?"))
+let number = parseInt(prompt("Com quantas cartas você quer jogar? Escolha um número par de 4 a 14!"))
 const section = document.querySelector("section");
 let photo = 'front';
 let front_cards = document.querySelectorAll(".front_card");
 let list = [];
 let plus = 0;
-
 let messege_list=[];
 let sentence_list=[];
 
 const images = ['img1','img1','img2','img2','img3','img3','img4','img4','img5','img5','img6','img6','img7','img7'];
+
+function askQuastion(){
+   while(number%2 !== 0){
+    number = parseInt(prompt("Com quantas cartas você quer jogar? Escolha um número par de 4 a 14!"))
+   }
+   while(number < 4){
+    number = parseInt(prompt("Com quantas cartas você quer jogar? Escolha um número par de 4 a 14!"))
+   }
+   while(number > 14){
+    number = parseInt(prompt("Com quantas cartas você quer jogar? Escolha um número par de 4 a 14!"))
+   }
+}
+askQuastion();
 
 function putCards(){
     for(let i=0; i < number; i++){
@@ -28,7 +40,6 @@ function putCards(){
     }
     return list;
 }
-
 putCards();
 
 function changeCards(messege){
@@ -55,8 +66,6 @@ function changeCards(messege){
         sentence_list = [];
         messege_list = [];
         plus = 0;
-
-        alert("Escolha duas cartas por vez!!!!")
     }
 
     setTimeout(checkCards, 2000);
